@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650e5c9e440b81643a4540405a629a48, type: 3}
+  m_Name: pigeon
+  m_EditorClassIdentifier: 
+  enemyName: Pigeon
+  enemyType: 0
+  enemyDesc: Just roaming around
+  maxHealth: 5
+  doesAttack: 1
+  strength: 1
+  image: {fileID: 21300000, guid: d437c4415ceceaa4094d65b6a6bc3b45, type: 3}
+  scale: 1
+  distanceToHit: 1.5
+  attackTime: 1.5
+  meleeAttackCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.20482664
+      value: -0.03398402
+      inSlope: 1.8295646
+      outSlope: 1.8295646
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.3347974
+      value: 0.8621298
+      inSlope: 0.007561177
+      outSlope: 0.007561177
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.546415
+      value: -0.029976605
+      inSlope: -0.3536297
+      outSlope: -0.3536297
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  timeDamageDealt: 0.33

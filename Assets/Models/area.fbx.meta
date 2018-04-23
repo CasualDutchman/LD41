@@ -1,0 +1,272 @@
+fileFormatVersion: 2
+guid: dc8b9cd2d73fd1743abef34e43e8ef00
+timeCreated: 1524427333
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cube
+    100004: Plane
+    100006: Terrain
+    100008: TerrainCol
+    100010: Terrain.001
+    100012: Terrain.002
+    100014: Terrain.003
+    100016: Terrain.004
+    100018: Terrain.005
+    100020: Terrain.006
+    100022: Terrain.007
+    100024: Terrain.008
+    100026: Terrain.009
+    100028: Terrain.010
+    100030: Terrain.011
+    100032: Terrain.012
+    100034: Terrain.013
+    100036: Terrain.014
+    100038: Rock_L_01
+    100040: Rock_L_02
+    100042: Rock_L_03
+    100044: Rock_L_04
+    100046: Rock_M_01
+    100048: Rock_M_02
+    100050: Rock_M_03
+    100052: Rock_M_04
+    100054: ter1
+    100056: ter2
+    100058: ter3
+    100060: ter4
+    100062: ter5
+    100064: ter6
+    100066: ter7
+    100068: ter8
+    100070: sunblockr
+    100072: WaterPlane
+    400000: //RootNode
+    400002: Cube
+    400004: Plane
+    400006: Terrain
+    400008: TerrainCol
+    400010: Terrain.001
+    400012: Terrain.002
+    400014: Terrain.003
+    400016: Terrain.004
+    400018: Terrain.005
+    400020: Terrain.006
+    400022: Terrain.007
+    400024: Terrain.008
+    400026: Terrain.009
+    400028: Terrain.010
+    400030: Terrain.011
+    400032: Terrain.012
+    400034: Terrain.013
+    400036: Terrain.014
+    400038: Rock_L_01
+    400040: Rock_L_02
+    400042: Rock_L_03
+    400044: Rock_L_04
+    400046: Rock_M_01
+    400048: Rock_M_02
+    400050: Rock_M_03
+    400052: Rock_M_04
+    400054: ter1
+    400056: ter2
+    400058: ter3
+    400060: ter4
+    400062: ter5
+    400064: ter6
+    400066: ter7
+    400068: ter8
+    400070: sunblockr
+    400072: WaterPlane
+    2300000: Cube
+    2300002: Plane
+    2300004: Terrain
+    2300006: TerrainCol
+    2300008: Terrain.001
+    2300010: Terrain.002
+    2300012: Terrain.003
+    2300014: Terrain.004
+    2300016: Terrain.005
+    2300018: Terrain.006
+    2300020: Terrain.007
+    2300022: Terrain.008
+    2300024: Terrain.009
+    2300026: Terrain.010
+    2300028: Terrain.011
+    2300030: Terrain.012
+    2300032: Terrain.013
+    2300034: Terrain.014
+    2300036: Rock_L_01
+    2300038: Rock_L_02
+    2300040: Rock_L_03
+    2300042: Rock_L_04
+    2300044: Rock_M_01
+    2300046: Rock_M_02
+    2300048: Rock_M_03
+    2300050: Rock_M_04
+    2300052: ter1
+    2300054: ter2
+    2300056: ter3
+    2300058: ter4
+    2300060: ter5
+    2300062: ter6
+    2300064: ter7
+    2300066: ter8
+    2300068: sunblockr
+    2300070: WaterPlane
+    3300000: Cube
+    3300002: Plane
+    3300004: Terrain
+    3300006: TerrainCol
+    3300008: Terrain.001
+    3300010: Terrain.002
+    3300012: Terrain.003
+    3300014: Terrain.004
+    3300016: Terrain.005
+    3300018: Terrain.006
+    3300020: Terrain.007
+    3300022: Terrain.008
+    3300024: Terrain.009
+    3300026: Terrain.010
+    3300028: Terrain.011
+    3300030: Terrain.012
+    3300032: Terrain.013
+    3300034: Terrain.014
+    3300036: Rock_L_01
+    3300038: Rock_L_02
+    3300040: Rock_L_03
+    3300042: Rock_L_04
+    3300044: Rock_M_01
+    3300046: Rock_M_02
+    3300048: Rock_M_03
+    3300050: Rock_M_04
+    3300052: ter1
+    3300054: ter2
+    3300056: ter3
+    3300058: ter4
+    3300060: ter5
+    3300062: ter6
+    3300064: ter7
+    3300066: ter8
+    3300068: sunblockr
+    3300070: WaterPlane
+    4300000: Cube
+    4300002: Plane
+    4300004: Terrain
+    4300006: TerrainCol
+    4300008: Terrain.014
+    4300010: Terrain.013
+    4300012: Terrain.012
+    4300014: Terrain.011
+    4300016: Terrain.010
+    4300018: Terrain.009
+    4300020: Terrain.008
+    4300022: Terrain.007
+    4300024: Terrain.006
+    4300026: Terrain.005
+    4300028: Terrain.004
+    4300030: Terrain.003
+    4300032: Terrain.002
+    4300034: Terrain.001
+    4300036: Rock_M_03
+    4300038: Rock_M_02
+    4300040: Rock_M_04
+    4300042: Rock_M_01
+    4300044: Rock_L_01
+    4300046: Rock_L_04
+    4300048: Rock_L_02
+    4300050: Rock_L_03
+    4300052: ter8
+    4300054: ter7
+    4300056: ter6
+    4300058: ter5
+    4300060: ter4
+    4300062: ter3
+    4300064: ter2
+    4300066: ter1
+    4300068: sunblockr
+    4300070: WaterPlane
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: e0d22b8ef20c2f6469b5dabed6dde8ec, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
