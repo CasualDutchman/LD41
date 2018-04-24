@@ -15,6 +15,7 @@ MonoBehaviour:
   toolType: 2
   toolDesc: Hold this card to gain mana faster
   strength: 1
+  rarity: 4
   distance: 0
   image: {fileID: 21300000, guid: 1cec52f249dc0934e860bc62d226ec7f, type: 3}
   useCoolOff: 1.2

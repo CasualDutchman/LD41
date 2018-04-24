@@ -11,7 +11,6 @@ public class ToolController : MonoBehaviour {
     public TextMeshPro strengthText;
     public SpriteRenderer spriteRenderer;
 
-    public bool onGround = true;
     public AnimationCurve bobbing;
     public float bobSpeed = 10;
     float timer;
@@ -19,34 +18,38 @@ public class ToolController : MonoBehaviour {
 
     public float coolDown;
 
+    Vector3 newWorldPos;
+
+    float despawnTimer;
+
     void Start() {
         toolNameText.text = tool.toolName;
         toolDescText.text = tool.toolDesc;
         strengthText.text = tool.toolType == ToolType.MANAGAINER ? "M" : tool.strength.ToString("F0");
         spriteRenderer.sprite = tool.image;
 
-        if(onGround)
-            PlaceOnGround();
+        transform.localScale = Vector3.one * 0.3f;
+
+        Ray ray = new Ray(transform.position + Vector3.up * 5, Vector3.down);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 10, LayerMask.GetMask("Water"))) {
+            newWorldPos = hit.point;
+        }
+
+        transform.GetChild(0).GetChild(0).GetComponent<Renderer>().material = RarityController.instance.GetRarityMaterial(tool.rarity);
     }
 
     void Update () {
-        if (onGround) {
-            timer += Time.deltaTime * (1 / bobSpeed);
-            if (timer >= 1) {
-                timer = 0;
-            }
-            transform.GetChild(0).localPosition = new Vector3(0, bobbing.Evaluate(timer), 0);
-            transform.GetChild(0).Rotate(Vector3.up * rotationSpeed * Time.deltaTime, Space.Self);
+        timer += Time.deltaTime * (1 / bobSpeed);
+        if (timer >= 1) {
+            timer = 0;
         }
-	}
+        transform.position = newWorldPos + new Vector3(0, 0.2f + bobbing.Evaluate(timer) * 0.5f, 0);
+        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime, Space.World);
 
-    public void PlaceOnGround() {
-        onGround = true;
-        transform.localScale = Vector3.one * 0.3f;
-        timer = 0;
-    }
-
-    public void OnHand() {
-        onGround = false;
+        despawnTimer += Time.deltaTime;
+        if (despawnTimer >= 60) {
+            Destroy(gameObject);
+        }
     }
 }

@@ -8,9 +8,11 @@ public class Tool : ScriptableObject {
     public string toolName;
     public ToolType toolType;
     public string toolDesc;
-    [Range(1, 10)]
     public int strength;
+    public Rarity rarity;
     public float distance;
+
+    public AudioClip attackClip;
 
     public Sprite image;
 
@@ -21,4 +23,4 @@ public class Tool : ScriptableObject {
     public float projectileSpeed;
 }
 
-public enum ToolType { MELEE, RANGE, MANAGAINER };
+public enum ToolType { MELEE, RANGE, MANAGAINER, HEALTHGAINER };

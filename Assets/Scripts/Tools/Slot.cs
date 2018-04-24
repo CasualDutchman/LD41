@@ -19,8 +19,10 @@ public class Slot : MonoBehaviour {
         }
         toolNameText.text = tool.toolName;
         toolDescText.text = tool.toolDesc;
-        strengthText.text = tool.toolType == ToolType.MANAGAINER ? "M" : tool.strength.ToString("F0");
+        strengthText.text = tool.toolType == ToolType.MANAGAINER ? "M" : (tool.toolType == ToolType.HEALTHGAINER ? "H" : tool.strength.ToString("F0"));
         spriteRenderer.sprite = tool.image;
+
+        transform.GetComponentInChildren<Renderer>().material = RarityController.instance.GetRarityMaterial(tool.rarity);
     }
 
     public void Change(Tool t) {
@@ -32,7 +34,9 @@ public class Slot : MonoBehaviour {
         }
         toolNameText.text = tool.toolName;
         toolDescText.text = tool.toolDesc;
-        strengthText.text = tool.toolType == ToolType.MANAGAINER ? "M" : tool.strength.ToString("F0");
+        strengthText.text = tool.toolType == ToolType.MANAGAINER ? "M" : (tool.toolType == ToolType.HEALTHGAINER ? "H" : tool.strength.ToString("F0"));
         spriteRenderer.sprite = tool.image;
+
+        transform.GetComponentInChildren<Renderer>().material = RarityController.instance.GetRarityMaterial(tool.rarity);
     }
 }

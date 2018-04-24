@@ -15,9 +15,10 @@ MonoBehaviour:
   enemyType: 0
   enemyDesc: Just roaming around
   maxHealth: 5
-  doesAttack: 1
-  strength: 1
+  strength: 3
+  rarity: 0
   image: {fileID: 21300000, guid: d437c4415ceceaa4094d65b6a6bc3b45, type: 3}
+  attackClip: {fileID: 8300000, guid: 8c4a0450497468840ab04122cb33d18b, type: 3}
   scale: 1
   distanceToHit: 1.5
   attackTime: 1.5
@@ -58,3 +59,5 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   timeDamageDealt: 0.33
+  projectile: {fileID: 0}
+  projectileSpeed: 0

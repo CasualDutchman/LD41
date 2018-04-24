@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650e5c9e440b81643a4540405a629a48, type: 3}
+  m_Name: Dragon_Rare
+  m_EditorClassIdentifier: 
+  enemyName: Biddrad, The Great
+  enemyType: 1
+  enemyDesc: Able to breath fire over a large distance
+  maxHealth: 15
+  strength: 15
+  rarity: 2
+  image: {fileID: 21300000, guid: 1726bc5f146c0b0429b9420575428d1e, type: 3}
+  attackClip: {fileID: 8300000, guid: ca2768baa8cbcb848943ace30b1cc173, type: 3}
+  scale: 1
+  distanceToHit: 7
+  attackTime: 7
+  meleeAttackCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.63788956
+      value: -0.52878726
+      inSlope: 1.8295646
+      outSlope: 1.8295646
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.68070614
+      value: 0.7065985
+      inSlope: 0.007561177
+      outSlope: 0.007561177
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.8766011
+      value: 0.025855124
+      inSlope: -0.3536297
+      outSlope: -0.3536297
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  timeDamageDealt: 0.68
+  projectile: {fileID: 1049321322338432, guid: 85a717e29b001c749b5fb28c8b98cbfd, type: 2}
+  projectileSpeed: 10

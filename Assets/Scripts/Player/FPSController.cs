@@ -6,17 +6,22 @@ using TMPro;
 
 public class FPSController : MonoBehaviour {
 
+    AudioSource source;
+
     public Slot slot1, slot2, slot3, slot4;
     public int toolIndex = 0;
     public Transform r1, r2, r3, r4;
     Image reference;
-    public Transform camera;
+    public Transform _camera;
 
     public Slot holdingCard;
 
     Vector3 localHoldCard;
 
+    public PauseMenu pa;
+
 	void Start () {
+        source = GetComponent<AudioSource>();
         reference = r2.GetComponent<Image>();
         localHoldCard = holdingCard.transform.localPosition;
         ManaStart();
@@ -28,17 +33,21 @@ public class FPSController : MonoBehaviour {
         UpdateHolding();
         HitUpdate();
         UpdateMana();
+        HealthUpdate();
 	}
 
     #region pickup
+    public TextMeshProUGUI helpButton;
+
     void PickUpUpdate() {
-        Ray ray = new Ray(camera.position, camera.forward);
+        Ray ray = new Ray(_camera.position, _camera.forward);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 7, LayerMask.GetMask("Tool"))) {
             if (Input.GetKeyDown(KeyCode.E)) {
                 PickUp(hit.collider.GetComponent<ToolController>().tool, hit.collider.gameObject);
             }
             if (reference.color.r > 0.5f) {
+                helpButton.gameObject.SetActive(true);
                 Color col = new Color(64/255f, 128/255f, 1);
                 r1.GetComponent<Image>().color = col;
                 r2.GetComponent<Image>().color = col;
@@ -46,6 +55,7 @@ public class FPSController : MonoBehaviour {
                 r4.GetComponent<Image>().color = col;
             }
         } else if (reference.color.r < 0.5f) {
+            helpButton.gameObject.SetActive(false);
             r1.GetComponent<Image>().color = Color.white;
             r2.GetComponent<Image>().color = Color.white;
             r3.GetComponent<Image>().color = Color.white;
@@ -68,12 +78,16 @@ public class FPSController : MonoBehaviour {
             ChangeHoldingIndex(3);
         } else {
             if (toolIndex == 0) {
+                slot1.Change(t);
                 ChangeHoldingIndex(0);
             } else if (toolIndex == 1) {
+                slot2.Change(t);
                 ChangeHoldingIndex(1);
             } else if (toolIndex == 2) {
+                slot3.Change(t);
                 ChangeHoldingIndex(2);
             } else if (toolIndex == 3) {
+                slot4.Change(t);
                 ChangeHoldingIndex(3);
             }
         }
@@ -144,6 +158,7 @@ public class FPSController : MonoBehaviour {
     #region mana
     public float manaIncrement = 1;
     float manaTimer;
+    public float maxMana = 30;
     int mana = 0;
     public TextMeshProUGUI manaText;
 
@@ -152,7 +167,7 @@ public class FPSController : MonoBehaviour {
     }
 
     void UpdateMana() {
-        if(mana < 10) {
+        if(mana < maxMana) {
             manaTimer += Time.deltaTime;
             float incerement = manaIncrement;
 
@@ -180,18 +195,42 @@ public class FPSController : MonoBehaviour {
     #endregion
 
     #region health
+    public float maxHealth = 100;
     public float health = 100;
     public TextMeshProUGUI healthText;
 
+    public float regenTime = 5;
+    float regenTimer = 0;
+
     void HealthStart() {
+        health = maxHealth;
         healthText.text = health.ToString();
+        regenTimer = regenTime;
     }
 
     public void Damage(float amount) {
         health -= amount;
         healthText.text = health.ToString();
+        regenTimer = regenTimer * 2;
         if (health <= 0) {
-            Debug.Log("DEAD");
+            pa.PauseDead();
+        }
+    }
+
+    public void HealthUpdate() {
+        if (health < maxHealth) {
+            float incerement = 1;
+            Tool t = GetCurrentTool();
+            if (t != null && t.toolType == ToolType.HEALTHGAINER) {
+                incerement = 2;
+            }
+
+            regenTimer -= Time.deltaTime * incerement;
+            if (regenTimer <= 0) {
+                health++;
+                healthText.text = health.ToString();
+                regenTimer += regenTime;
+            }
         }
     }
     #endregion
@@ -200,7 +239,7 @@ public class FPSController : MonoBehaviour {
     float useTimer = 0;
 
     void HitUpdate() {
-        Ray ray = new Ray(camera.position, camera.forward);
+        Ray ray = new Ray(_camera.position, _camera.forward);
         RaycastHit hit;
         if (Input.GetMouseButtonDown(0)) {
             Tool t = GetCurrentTool();
@@ -227,14 +266,8 @@ public class FPSController : MonoBehaviour {
         }
 
         if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("Enemy"))) {
-            Tool t = GetCurrentTool();
-            bool inRange = t != null && Vector3.Distance(transform.position, hit.collider.transform.position) < t.distance;
-            if (t != null && t.distance <= 0)
-                inRange = true;
-            r1.GetComponent<Image>().color = inRange || t == null ? Color.red : Color.white;
-
-            if (reference.color.b > 0.5f || (inRange && r1.GetComponent<Image>().color.r > 0.5f)) {
-                //r1.GetComponent<Image>().color = inRange || t == null ? col : Color.white;
+            if (reference.color.b > 0.5f) {
+                r1.GetComponent<Image>().color = Color.red;
                 r2.GetComponent<Image>().color = Color.red;
                 r3.GetComponent<Image>().color = Color.red;
                 r4.GetComponent<Image>().color = Color.red;
@@ -257,13 +290,17 @@ public class FPSController : MonoBehaviour {
     void Melee(Tool t, Transform enemy) {
         EnemyController enemyController = enemy.GetComponent<EnemyController>();
         enemyController.Damage(t.strength);
+        source.clip = t.attackClip;
+        source.Play();
     }
 
     void Range(Tool t) {
         //EnemyController enemyController = enemy.GetComponent<EnemyController>();
         //enemyController.Damage(t.strength);
-        GameObject projectile = Instantiate(t.projectilePrefab, camera.position - Vector3.up * 0.2f, camera.rotation);
-        projectile.GetComponent<Projectile>().Shoot(camera.forward, t.projectileSpeed, t.strength);
+        GameObject projectile = Instantiate(t.projectilePrefab, _camera.position - Vector3.up * 0.2f + _camera.forward, _camera.rotation);
+        projectile.GetComponent<Projectile>().Shoot(_camera.forward, t.projectileSpeed, t.strength, ProjectileHit.Enemy);
+        source.clip = t.attackClip;
+        source.Play();
     }
 #endregion
 }

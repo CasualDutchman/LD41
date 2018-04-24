@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650e5c9e440b81643a4540405a629a48, type: 3}
+  m_Name: Knight_Rare
+  m_EditorClassIdentifier: 
+  enemyName: Knight
+  enemyType: 0
+  enemyDesc: Short distance melee, but watch out!
+  maxHealth: 5
+  strength: 3
+  rarity: 2
+  image: {fileID: 21300000, guid: a1c59e6920a45cd4fa3a9b351f6b636c, type: 3}
+  attackClip: {fileID: 8300000, guid: 8c4a0450497468840ab04122cb33d18b, type: 3}
+  scale: 1
+  distanceToHit: 2
+  attackTime: 2
+  meleeAttackCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.20482664
+      value: -0.03398402
+      inSlope: 1.8295646
+      outSlope: 1.8295646
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.3347974
+      value: 0.8621298
+      inSlope: 0.007561177
+      outSlope: 0.007561177
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.546415
+      value: -0.029976605
+      inSlope: -0.3536297
+      outSlope: -0.3536297
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  timeDamageDealt: 0.33
+  projectile: {fileID: 1049321322338432, guid: 85a717e29b001c749b5fb28c8b98cbfd, type: 2}
+  projectileSpeed: 13

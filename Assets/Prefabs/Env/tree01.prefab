@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4867633270298390}
-  - component: {fileID: 114787231502246702}
   - component: {fileID: 205816032813494986}
   - component: {fileID: 136309930742704104}
   m_Layer: 0
@@ -186,17 +185,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1575423878198256}
   m_Mesh: {fileID: 4300002, guid: 05a7261ddb4a4334aa8ff29e800ee5ad, type: 3}
---- !u!114 &114787231502246702
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1223075773115312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01edc7fa05a4ca64fa1baeee07e548f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &136309930742704104
 CapsuleCollider:
   m_ObjectHideFlags: 1

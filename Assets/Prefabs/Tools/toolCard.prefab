@@ -38,8 +38,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4825796878951224}
-  - component: {fileID: 64365197841887276}
   - component: {fileID: 114803427416449428}
+  - component: {fileID: 65335447954312874}
   m_Layer: 9
   m_Name: toolCard
   m_TagString: Untagged
@@ -215,7 +215,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1661002981384800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.43, y: 0, z: -0.11}
+  m_LocalPosition: {x: -5.43, y: 0.478, z: -0.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4020734579797992}
@@ -270,7 +270,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 8b0dff6e85dd11448beee62c01e75c77, type: 2}
+  - {fileID: 2100000, guid: 32a91365829253c49af24dd946f99a36, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -427,20 +427,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1705874411217558}
   m_Mesh: {fileID: 0}
---- !u!64 &64365197841887276
-MeshCollider:
+--- !u!65 &65335447954312874
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1661002981384800}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300002, guid: fa2883119487dec40bfd12fe93b5c439, type: 3}
+  m_Size: {x: 1.35, y: 1.9, z: 0.1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &114048452350703694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -793,7 +791,6 @@ MonoBehaviour:
   toolDescText: {fileID: 114048452350703694}
   strengthText: {fileID: 114368698689095406}
   spriteRenderer: {fileID: 212582112789961440}
-  onGround: 1
   bobbing:
     serializedVersion: 2
     m_Curve:
@@ -820,6 +817,7 @@ MonoBehaviour:
     m_RotationOrder: 0
   bobSpeed: 6
   rotationSpeed: 15
+  coolDown: 0
 --- !u!212 &212582112789961440
 SpriteRenderer:
   m_ObjectHideFlags: 1
